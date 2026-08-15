@@ -4,7 +4,7 @@
 This repository contains the Infrastructure as Code (IaC) written in **Terraform** to provision a highly available, scalable, and secure three-tier web architecture on AWS. The project simulates a cloud migration and infrastructure modernization effort for a retail application, transitioning from a monolithic design to a decoupled, resilient cloud-native architecture.
 
 ## 🏗️ Architecture Diagram
-*(Add your architecture diagram image here. e.g., `![Architecture Diagram]()`)*
+![Architecture Diagram](Arc.jpeg)
 
 ## 🚀 Key Features & Design Decisions
 
