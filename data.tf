@@ -24,12 +24,12 @@ resource "aws_db_instance" "main_rds" {
   identifier              = "main-rds-db"
   engine                  = "mysql"
   engine_version          = "8.0"
-  instance_class          = "db.t3.micro" # مناسب جداً للتجارب 
+  instance_class          = "db.t3.micro" 
   allocated_storage       = 20
 
   db_name                 = "workshopdb"
   username                = "admin"
-  password                = "Admin12345!" # في بيئة العمل الحقيقية بنستخدم AWS Secrets Manager
+  password                = "Admin12345!" 
 
   # --- Requirements from Task 4.1 ---
   multi_az                = true
@@ -40,7 +40,7 @@ resource "aws_db_instance" "main_rds" {
   db_subnet_group_name    = aws_db_subnet_group.rds_subnet_group.name
   vpc_security_group_ids  = [aws_security_group.data_tier_sg.id]
   
-  skip_final_snapshot     = true # عشان متعملكش مشكلة لو حبيت تعمل terraform destroy
+  skip_final_snapshot     = true 
   
   tags = { Name = "Primary-RDS" }
 }
@@ -56,8 +56,8 @@ resource "aws_elasticache_replication_group" "main_redis" {
   node_type                     = "cache.t3.micro"
   
   # --- Requirements from Task 4.1 ---
-  num_cache_clusters            = 2    # بيكريت 2 Nodes زي ما مطلوب
-  automatic_failover_enabled    = true # لازم تتفعل طالما الـ Nodes أكتر من 1
+  num_cache_clusters            = 2    
+  automatic_failover_enabled    = true 
   
   at_rest_encryption_enabled    = true
   transit_encryption_enabled    = true

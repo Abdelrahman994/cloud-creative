@@ -94,7 +94,6 @@ resource "aws_launch_template" "app_lt" {
     security_groups = [aws_security_group.app_tier_sg.id]
   }
 
-  # التعديل هنا: سكريبت الـ Backend الصحيح بـ PM2
   user_data = base64encode(<<-EOF
     #!/bin/bash
     dnf update -y
